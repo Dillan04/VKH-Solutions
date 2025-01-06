@@ -27,14 +27,60 @@
 .header .logo h1 {
     font-size: 2rem;
 }
-.header .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
+
+/* Navbar Styling */
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-.header .navbar a:hover {
-    text-decoration: underline;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+.nav-links li {
+    margin: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav-links a:hover {
+    background-color: #005bb5;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2238A4;
+        padding: 10px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Smooth Scroll */
@@ -139,13 +185,12 @@ html {
     font-size: 1.1rem;
     color: #02061d;
     margin-bottom: 20px;
-    margin-top: 20px;
 }
 .innovation-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 .innovation-gallery img {
     max-width: 100%;
@@ -184,13 +229,12 @@ html {
     margin-bottom: 10px;
     font-size: 1.7rem;
     color: #02061d;
-    margin-top: 10px;
 }
 
 /* Footer */
 .footer {
     background-color: #2238A4;
     color: white;
-    padding: 10px 20px; /* Added padding for consistent alignment */
+    padding: 10px 20px;
     text-align: center;
 }
